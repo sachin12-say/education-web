@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Learners.us</title>
+    <meta name="description" content="Get in touch with Learners.us for any questions about our courses, partnerships, or support.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    Learners<span class="logo-accent">.us</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#courses" class="nav-link">Courses</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+
+                    <!-- Accessibility Controls -->
+                    <div class="accessibility-controls">
+                        <button class="font-btn" onclick="adjustFontSize(1)">A+</button>
+                        <button class="font-btn" onclick="adjustFontSize(-1)">A-</button>
+                        <select class="language-select" onchange="changeLanguage(this.value)">
+                            <option value="en">English</option>
+                            <option value="hi">हिंदी</option>
+                        </select>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+
+                    <!-- Auth Buttons -->
+                    <div class="auth-buttons">
+                      <a href="login page.html">  <button class="btn btn-outline">Login</button></a>
+                        <a href="signup.html"><button class="btn btn-primary">Sign Up</button></a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-controls">
+                    <button class="theme-toggle mobile-theme" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="mobile-theme-icon"></i>
+                    </button>
+                    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars" id="hamburger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team for any questions or inquiries</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Have questions about our courses or need assistance? Reach out to us using any of the following methods or fill out the contact form.</p>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Our Location</h3>
+                                <p>123 Education Street, Delhi, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Phone Number</h3>
+                                <p>+91 98765 43210</p>
+                                <p>+91 12345 67890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email Address</h3>
+                                <p>support@learners.us</p>
+                                <p>info@learners.us</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Working Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p>Saturday: 10:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Your email address" required>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your phone number (optional)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject <span class="required">*</span></label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="course-inquiry">Course Inquiry</option>
+                                <option value="technical-support">Technical Support</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message" id="subject-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I agree to the <a href="#">privacy policy</a> and consent to being contacted by Learners.us</label>
+                            <div class="error-message" id="consent-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.54004883338!2d77.04417285!3d28.5273522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1623159999999!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>How can I enroll in a course?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can enroll in any course by visiting the course page and clicking the "Enroll Now" button. You'll need to create an account or log in if you already have one, then complete the payment process to gain access to the course materials.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards, debit cards, UPI, net banking, and popular digital wallets. All payments are processed securely through our payment gateway.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Do you offer refunds if I'm not satisfied?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer a 7-day money-back guarantee for all our courses. If you're not satisfied with the course content, you can request a refund within 7 days of enrollment by contacting our support team.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>How long do I have access to the course materials?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Once enrolled, you have lifetime access to the course materials. You can revisit the content anytime, even after completing the course.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Do you provide certificates upon course completion?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide digital certificates for all completed courses. These certificates can be downloaded, printed, and shared on your professional profiles like LinkedIn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-logo">Learners<span class="logo-accent">.us</span></h3>
+                    <p>Empowering learners with quality education anytime, anywhere.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@learners.us</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Address: Delhi, India</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Subscribe</h4>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Learners.us. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Message Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Message Sent Successfully!</h3>
+                <p>Thank you for contacting us. We'll get back to you shortly.</p>
+                <button class="btn btn-primary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

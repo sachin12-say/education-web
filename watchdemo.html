@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Demos - Learners.us</title>
+    <meta name="description" content="Watch course demos and previews from Learners.us to get a taste of our expert-led learning experience.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="watchdemo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">Learners<span class="logo-accent">.us</span></a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#courses" class="nav-link">Courses</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <!-- Accessibility Controls -->
+                    <div class="accessibility-controls">
+                        <button class="font-btn" onclick="adjustFontSize(1)">A+</button>
+                        <button class="font-btn" onclick="adjustFontSize(-1)">A-</button>
+                        <select class="language-select" onchange="changeLanguage(this.value)">
+                            <option value="en">English</option>
+                            <option value="hi">हिंदी</option>
+                        </select>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+
+                    <!-- Auth Buttons -->
+                    <div class="auth-buttons">
+                        <a href="login.html" class="btn btn-outline">Login</a>
+                        <a href="signup-new.html" class="btn btn-primary">Sign Up</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-controls">
+                    <button class="theme-toggle mobile-theme" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="mobile-theme-icon"></i>
+                    </button>
+                    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars" id="hamburger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="demo-hero">
+        <div class="demo-hero-overlay"></div>
+        <div class="container">
+            <div class="demo-hero-content">
+                <h1 class="demo-title">Experience Our <span class="text-gradient">Interactive Courses</span></h1>
+                <p class="demo-subtitle">Watch demos of our most popular courses and see why thousands of students choose Learners.us</p>
+                <div class="demo-stats">
+                    <div class="demo-stat">
+                        <span class="stat-number" id="student-count">0</span>
+                        <span class="stat-label">Active Students</span>
+                    </div>
+                    <div class="demo-stat">
+                        <span class="stat-number" id="course-count">0</span>
+                        <span class="stat-label">Video Courses</span>
+                    </div>
+                    <div class="demo-stat">
+                        <span class="stat-number" id="hour-count">0</span>
+                        <span class="stat-label">Hours of Content</span>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span>Scroll to watch</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessibility Courses Section -->
+    <section class="accessibility-courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Inclusive Learning for All Abilities</h2>
+                <p>Specially designed courses with accessibility features for students with diverse needs</p>
+            </div>
+            <div class="accessibility-features-banner">
+                <div class="feature-icon">
+                    <i class="fas fa-closed-captioning"></i>
+                    <span>Closed Captioning</span>
+                </div>
+                <div class="feature-icon">
+                    <i class="fas fa-american-sign-language-interpreting"></i>
+                    <span>Sign Language</span>
+                </div>
+                <div class="feature-icon">
+                    <i class="fas fa-audio-description"></i>
+                    <span>Audio Description</span>
+                </div>
+                <div class="feature-icon">
+                    <i class="fas fa-universal-access"></i>
+                    <span>Screen Reader Compatible</span>
+                </div>
+                <div class="feature-icon">
+                    <i class="fas fa-keyboard"></i>
+                    <span>Keyboard Navigation</span>
+                </div>
+            </div>
+            <div class="accessibility-courses-grid">
+                <!-- Course 1 -->
+                <div class="accessibility-course-card">
+                    <div class="course-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1573497019236-61e1a8b00b2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-badges">
+                            <span class="badge badge-primary">Sign Language</span>
+                            <span class="badge badge-secondary">Captions</span>
+                        </div>
+                        <h3>Digital Literacy for Visual Impairment</h3>
+                        <p>Learn to navigate digital spaces confidently using screen readers and assistive technologies.</p>
+                        <div class="course-features">
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <span>12 Weeks</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Beginner Friendly</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-sm">Watch Demo</a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="accessibility-course-card">
+                    <div class="course-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1598618356794-eb1720430eb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-badges">
+                            <span class="badge badge-primary">Audio Description</span>
+                            <span class="badge badge-secondary">Transcripts</span>
+                        </div>
+                        <h3>Web Development with Adaptive Tools</h3>
+                        <p>Create accessible websites while learning to code using adaptive programming tools and techniques.</p>
+                        <div class="course-features">
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <span>16 Weeks</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-sm">Watch Demo</a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="accessibility-course-card">
+                    <div class="course-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-badges">
+                            <span class="badge badge-primary">Sign Language</span>
+                            <span class="badge badge-secondary">Visual Aids</span>
+                        </div>
+                        <h3>Digital Art for Motor Disabilities</h3>
+                        <p>Express your creativity using specialized digital art tools designed for various motor abilities.</p>
+                        <div class="course-features">
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <span>10 Weeks</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>All Levels</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-sm">Watch Demo</a>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="accessibility-course-card">
+                    <div class="course-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1551966775-a4ddc8df052b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-badges">
+                            <span class="badge badge-primary">Simplified Content</span>
+                            <span class="badge badge-secondary">Visual Supports</span>
+                        </div>
+                        <h3>Technology Skills for Cognitive Accessibility</h3>
+                        <p>Learn essential technology skills with content designed for different cognitive and learning styles.</p>
+                        <div class="course-features">
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <span>8 Weeks</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Self-Paced</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-sm">Watch Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Demo -->
+    <section class="featured-demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Course Demo</h2>
+                <p>Get a taste of our most popular course</p>
+            </div>
+            <div class="featured-video-container">
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <video id="featured-video" poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" controls>
+                        <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="featured-video-info">
+                    <h3>Web Development Masterclass</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-user"></i> Instructor: Ravi Kapoor</span>
+                        <span><i class="fas fa-clock"></i> 42 hours</span>
+                        <span><i class="fas fa-star"></i> 4.9/5 (2,450 ratings)</span>
+                    </div>
+                    <p>This comprehensive course takes you from beginner to professional web developer. Learn HTML, CSS, JavaScript, React, and Node.js through hands-on projects and real-world applications.</p>
+                    <a href="#" class="btn btn-primary">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Categories -->
+    <section class="demo-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Browse by Category</h2>
+                <p>Find demos in your area of interest</p>
+            </div>
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Categories</button>
+                <button class="category-tab" data-category="programming">Programming</button>
+                <button class="category-tab" data-category="design">Design</button>
+                <button class="category-tab" data-category="business">Business</button>
+                <button class="category-tab" data-category="data-science">Data Science</button>
+            </div>
+            <div class="demo-grid">
+                <!-- Demo Card 1 -->
+                <div class="demo-card" data-category="programming">
+                    <div class="demo-card-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="demo-card-content">
+                        <div class="demo-card-tag">Programming</div>
+                        <h3>Python for Beginners</h3>
+                        <p>Learn Python programming from scratch with practical examples and projects.</p>
+                        <div class="demo-card-meta">
+                            <span><i class="fas fa-clock"></i> 28 hours</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Card 2 -->
+                <div class="demo-card" data-category="design">
+                    <div class="demo-card-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="demo-card-content">
+                        <div class="demo-card-tag">Design</div>
+                        <h3>UI/UX Design Fundamentals</h3>
+                        <p>Master the principles of user interface and experience design for digital products.</p>
+                        <div class="demo-card-meta">
+                            <span><i class="fas fa-clock"></i> 32 hours</span>
+                            <span><i class="fas fa-star"></i> 4.9/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Card 3 -->
+                <div class="demo-card" data-category="business">
+                    <div class="demo-card-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="demo-card-content">
+                        <div class="demo-card-tag">Business</div>
+                        <h3>Digital Marketing Strategy</h3>
+                        <p>Learn how to create and implement effective digital marketing campaigns.</p>
+                        <div class="demo-card-meta">
+                            <span><i class="fas fa-clock"></i> 24 hours</span>
+                            <span><i class="fas fa-star"></i> 4.7/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Card 4 -->
+                <div class="demo-card" data-category="data-science">
+                    <div class="demo-card-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="demo-card-content">
+                        <div class="demo-card-tag">Data Science</div>
+                        <h3>Machine Learning Essentials</h3>
+                        <p>Understand the fundamentals of machine learning algorithms and applications.</p>
+                        <div class="demo-card-meta">
+                            <span><i class="fas fa-clock"></i> 36 hours</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Card 5 -->
+                <div class="demo-card" data-category="programming">
+                    <div class="demo-card-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="demo-card-content">
+                        <div class="demo-card-tag">Programming</div>
+                        <h3>React.js for Frontend Developers</h3>
+                        <p>Build modern, interactive web applications with React.js and related technologies.</p>
+                        <div class="demo-card-meta">
+                            <span><i class="fas fa-clock"></i> 30 hours</span>
+                            <span><i class="fas fa-star"></i> 4.9/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Card 6 -->
+                <div class="demo-card" data-category="design">
+                    <div class="demo-card-video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <video class="lazy-video" poster="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                            <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="demo-card-content">
+                        <div class="demo-card-tag">Design</div>
+                        <h3>Adobe Photoshop Masterclass</h3>
+                        <p>Learn professional photo editing and graphic design techniques with Adobe Photoshop.</p>
+                        <div class="demo-card-meta">
+                            <span><i class="fas fa-clock"></i> 26 hours</span>
+                            <span><i class="fas fa-star"></i> 4.7/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="interactive-demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Learning Experience</h2>
+                <p>See how our platform makes learning engaging and effective</p>
+            </div>
+            <div class="interactive-demo-container">
+                <div class="interactive-tabs">
+                    <button class="interactive-tab active" data-tab="video-lessons">Video Lessons</button>
+                    <button class="interactive-tab" data-tab="coding-exercises">Coding Exercises</button>
+                    <button class="interactive-tab" data-tab="quizzes">Interactive Quizzes</button>
+                    <button class="interactive-tab" data-tab="projects">Hands-on Projects</button>
+                </div>
+                <div class="interactive-content">
+                    <!-- Video Lessons Tab -->
+                    <div class="tab-content active" id="video-lessons">
+                        <div class="tab-split">
+                            <div class="tab-info">
+                                <h3>Learn with HD Video Lessons</h3>
+                                <p>Our courses feature high-quality video lessons with clear explanations, demonstrations, and real-world examples. Each lesson is carefully structured to build your knowledge step by step.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Professional studio-quality recordings</li>
+                                    <li><i class="fas fa-check"></i> Downloadable for offline viewing</li>
+                                    <li><i class="fas fa-check"></i> Closed captions and transcripts</li>
+                                    <li><i class="fas fa-check"></i> Adjustable playback speed</li>
+                                </ul>
+                            </div>
+                            <div class="tab-preview">
+                                <div class="video-container">
+                                    <div class="video-overlay">
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
+                                    <video class="tab-video" poster="https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                                        <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coding Exercises Tab -->
+                    <div class="tab-content" id="coding-exercises">
+                        <div class="tab-split">
+                            <div class="tab-info">
+                                <h3>Practice with Interactive Coding Exercises</h3>
+                                <p>Apply what you've learned with our interactive coding environment. Write, run, and test your code directly in your browser with real-time feedback and guidance.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Built-in code editor with syntax highlighting</li>
+                                    <li><i class="fas fa-check"></i> Instant feedback and error checking</li>
+                                    <li><i class="fas fa-check"></i> Progressive challenges that build skills</li>
+                                    <li><i class="fas fa-check"></i> Save your progress and solutions</li>
+                                </ul>
+                            </div>
+                            <div class="tab-preview">
+                                <div class="code-editor-demo">
+                                    <div class="editor-header">
+                                        <div class="editor-dots">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <div class="editor-title">index.js</div>
+                                    </div>
+                                    <div class="editor-body">
+                                        <pre><code><span class="code-comment">// Write a function that returns the sum of two numbers</span>
+<span class="code-keyword">function</span> <span class="code-function">addNumbers</span>(a, b) {
+  <span class="code-comment">// Your code here</span>
+  <span class="code-keyword">return</span> a + b;
+}
+
+<span class="code-comment">// Test your function</span>
+<span class="code-keyword">const</span> result = addNumbers(<span class="code-number">5</span>, <span class="code-number">3</span>);
+console.log(result); <span class="code-comment">// Should output: 8</span></code></pre>
+                                    </div>
+                                    <div class="editor-footer">
+                                        <button class="btn btn-primary btn-sm">Run Code</button>
+                                        <div class="editor-output">
+                                            <span class="output-label">Output:</span>
+                                            <span class="output-result">8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quizzes Tab -->
+                    <div class="tab-content" id="quizzes">
+                        <div class="tab-split">
+                            <div class="tab-info">
+                                <h3>Test Your Knowledge with Interactive Quizzes</h3>
+                                <p>Reinforce your learning with our interactive quizzes. Get immediate feedback on your answers and explanations to help you understand concepts better.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Multiple question formats</li>
+                                    <li><i class="fas fa-check"></i> Detailed explanations for each answer</li>
+                                    <li><i class="fas fa-check"></i> Progress tracking and analytics</li>
+                                    <li><i class="fas fa-check"></i> Spaced repetition for better retention</li>
+                                </ul>
+                            </div>
+                            <div class="tab-preview">
+                                <div class="quiz-demo">
+                                    <div class="quiz-question">
+                                        <h4>Which of the following is NOT a JavaScript data type?</h4>
+                                        <div class="quiz-options">
+                                            <label class="quiz-option">
+                                                <input type="radio" name="quiz-demo" value="string">
+                                                <span class="option-text">String</span>
+                                            </label>
+                                            <label class="quiz-option">
+                                                <input type="radio" name="quiz-demo" value="boolean">
+                                                <span class="option-text">Boolean</span>
+                                            </label>
+                                            <label class="quiz-option">
+                                                <input type="radio" name="quiz-demo" value="character" checked>
+                                                <span class="option-text">Character</span>
+                                            </label>
+                                            <label class="quiz-option">
+                                                <input type="radio" name="quiz-demo" value="number">
+                                                <span class="option-text">Number</span>
+                                            </label>
+                                        </div>
+                                        <div class="quiz-feedback correct">
+                                            <i class="fas fa-check-circle"></i>
+                                            <p>Correct! JavaScript does not have a Character data type. In JavaScript, individual characters are represented as strings with a length of 1.</p>
+                                        </div>
+                                        <button class="btn btn-primary btn-sm">Next Question</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Tab -->
+                    <div class="tab-content" id="projects">
+                        <div class="tab-split">
+                            <div class="tab-info">
+                                <h3>Build Real-World Projects</h3>
+                                <p>Apply everything you've learned by building complete, real-world projects. Get hands-on experience that you can add to your portfolio and showcase to potential employers.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Industry-relevant project assignments</li>
+                                    <li><i class="fas fa-check"></i> Step-by-step guidance and resources</li>
+                                    <li><i class="fas fa-check"></i> Code reviews and feedback</li>
+                                    <li><i class="fas fa-check"></i> Certificate upon completion</li>
+                                </ul>
+                            </div>
+                            <div class="tab-preview">
+                                <div class="project-showcase">
+                                    <div class="project-browser">
+                                        <div class="browser-header">
+                                            <div class="browser-dots">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <div class="browser-address">
+                                                <i class="fas fa-lock"></i>
+                                                <span>myproject.learners.us</span>
+                                            </div>
+                                        </div>
+                                        <div class="browser-content">
+                                            <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project Preview">
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>E-Commerce Website Project</h4>
+                                        <div class="project-tags">
+                                            <span>HTML</span>
+                                            <span>CSS</span>
+                                            <span>JavaScript</span>
+                                            <span>React</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="video-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student Success Stories</h2>
+                <p>Hear from our students who transformed their careers with our courses</p>
+            </div>
+            <div class="testimonial-carousel">
+                <div class="testimonial-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-video">
+                            <div class="video-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <video class="lazy-video" poster="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                                <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"The Web Development course completely changed my career path. Within 3 months of completing the course, I landed my dream job as a frontend developer."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+                                <div>
+                                    <h4>Priya Sharma</h4>
+                                    <p>Frontend Developer at TechCorp</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-video">
+                            <div class="video-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <video class="lazy-video" poster="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                                <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"The Data Science course provided me with practical skills that I could immediately apply in my job. The hands-on projects were particularly valuable."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Mehta">
+                                <div>
+                                    <h4>Rahul Mehta</h4>
+                                    <p>Data Analyst at FinTech Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-video">
+                            <div class="video-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <video class="lazy-video" poster="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4">
+                                <source data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"As someone with no prior design experience, the UI/UX course was perfect. The instructor explained complex concepts in a way that was easy to understand."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ananya Patel">
+                                <div>
+                                    <h4>Ananya Patel</h4>
+                                    <p>UI Designer at Creative Studios</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-control prev" id="prev-testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active"></span>
+                        <span class="carousel-dot"></span>
+                        <span class="carousel-dot"></span>
+                    </div>
+                    <button class="carousel-control next" id="next-testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="demo-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Learning Journey?</h2>
+                <p>Join thousands of students who are already transforming their careers with Learners.us</p>
+                <div class="cta-buttons">
+                    <a href="signup.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-user-plus"></i> Sign Up Now
+                    </a>
+                    <a href="index.html#courses" class="btn btn-outline btn-large">
+                        <i class="fas fa-th-list"></i> Browse All Courses
+                    </a>
+                </div>
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certification</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Lifetime Access</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Money-Back Guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-logo">Learners<span class="logo-accent">.us</span></h3>
+                    <p>Empowering learners with quality education anytime, anywhere.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@learners.us</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Address: Delhi, India</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Subscribe</h4>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Learners.us. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="watchdemo.js"></script>
+</body>
+</html>

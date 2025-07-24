@@ -1,0 +1,556 @@
+/* CSS Custom Properties for Theming */
+:root {
+  --primary-color: #7c3aed;
+  --primary-hover: #6d28d9;
+  --secondary-color: #3b82f6;
+  --accent-color: #00ffe5;
+  --accent-gradient: linear-gradient(to right, #00ffe5, #a88beb);
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-accent: linear-gradient(135deg, #faf5ff 0%, #eff6ff 100%);
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --primary-color: #a855f7;
+  --primary-hover: #9333ea;
+  --secondary-color: #60a5fa;
+  --accent-color: #00ffe5;
+  --accent-gradient: linear-gradient(to right, #00ffe5, #a88beb);
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-accent: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: var(--transition);
+}
+
+/* Header Styles */
+header {
+  background: var(--bg-primary);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.logo span {
+  color: var(--secondary-color);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  transition: var(--transition);
+}
+
+.nav-signup {
+  background: var(--primary-color);
+  color: white !important;
+  border: none;
+}
+
+.nav-signup:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Banner Styles */
+.top-banner {
+  position: relative;
+  background: url("https://images.unsplash.com/photo-1584697964154-96f18dec3b43") no-repeat center center / cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.top-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.top-banner h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+  padding: 0 1rem;
+}
+
+.top-banner h1:hover {
+  transform: scale(1.05);
+}
+
+/* Second Banner - Accessible Courses */
+.second-banner {
+  background: var(--bg-accent);
+  padding: 3rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accessible-heading {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.accessible-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+.accessible-description {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Accessible Slider */
+.accessible-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Course Description */
+.course-description {
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+/* Courses Section */
+.courses {
+  padding: 2rem 1rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.courses h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+  color: var(--accent-color);
+  position: relative;
+}
+
+.courses h2::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.course-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.course-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.course-card p strong {
+  color: var(--text-primary);
+}
+
+.enroll {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.enroll:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Footer Styles */
+.footer {
+  background: var(--bg-secondary);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.logo-accent {
+  color: var(--secondary-color);
+}
+
+.footer-column p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-column a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-column a:hover {
+  color: var(--primary-color);
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newsletter-input {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  background: var(--bg-secondary);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Sign Language Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-content {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: var(--shadow-lg);
+}
+
+.popup-content h3 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.popup-content video {
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-primary);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: var(--shadow);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .top-banner h1 {
+    font-size: 2rem;
+  }
+
+  .accessible-heading {
+    font-size: 1.8rem;
+  }
+
+  .courses h2 {
+    font-size: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .accessible-heading {
+    font-size: 1.5rem;
+  }
+
+  .courses h2 {
+    font-size: 1.8rem;
+  }
+
+  .course-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+/* Accessibility Focus Styles */
+button:focus,
+a:focus,
+input:focus,
+select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Add this to your JavaScript to toggle the mobile menu */
+/* 
+document.getElementById('hamburger-btn').addEventListener('click', function() {
+  document.getElementById('nav-menu').classList.toggle('active');
+});
+*/

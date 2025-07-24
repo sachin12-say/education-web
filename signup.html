@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Learners.us</title>
+    <meta name="description" content="Create your Learners.us account and start your learning journey with thousands of courses.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">Learners<span class="logo-accent">.us</span></a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#courses" class="nav-link">Courses</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <!-- Accessibility Controls -->
+                    <div class="accessibility-controls">
+                        <button class="font-btn" onclick="adjustFontSize(1)">A+</button>
+                        <button class="font-btn" onclick="adjustFontSize(-1)">A-</button>
+                        <select class="language-select" onchange="changeLanguage(this.value)">
+                            <option value="en">English</option>
+                            <option value="hi">हिंदी</option>
+                        </select>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+
+                    <!-- Auth Buttons -->
+                    <div class="auth-buttons">
+                        <a href="login page.html" class="btn btn-outline">Login</a>
+                        <a href="signup-new.html" class="btn btn-primary">Sign Up</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-controls">
+                    <button class="theme-toggle mobile-theme" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="mobile-theme-icon"></i>
+                    </button>
+                    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars" id="hamburger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Signup Section -->
+    <section class="signup-section">
+        <div class="container">
+            <div class="signup-container">
+                <!-- Left Side - Form -->
+                <div class="form-side">
+                    <div class="form-header">
+                        <div class="form-logo">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h1>Create Your Account</h1>
+                        <p>Join thousands of learners and start your journey today</p>
+                    </div>
+
+                    <!-- Progress Steps -->
+                    <div class="progress-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <span class="step-label">Personal Info</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <span class="step-label">Account Details</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <span class="step-label">Preferences</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Signup -->
+                    <div class="social-signup">
+                        <button class="social-btn google-btn" onclick="socialSignup('google')">
+                            <i class="fab fa-google"></i>
+                            <span>Sign up with Google</span>
+                        </button>
+                        <button class="social-btn facebook-btn" onclick="socialSignup('facebook')">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Sign up with Facebook</span>
+                        </button>
+                    </div>
+
+                    <div class="divider">
+                        <span>or create account manually</span>
+                    </div>
+
+                    <!-- Multi-Step Signup Form -->
+                    <form id="signupForm" class="signup-form">
+                        <!-- Step 1: Personal Information -->
+                        <div class="form-step active" id="step-1">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <div class="input-container">
+                                        <i class="fas fa-user input-icon"></i>
+                                        <input 
+                                            type="text" 
+                                            id="firstName" 
+                                            name="firstName" 
+                                            placeholder="Enter your first name"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="error-message" id="firstName-error"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <div class="input-container">
+                                        <i class="fas fa-user input-icon"></i>
+                                        <input 
+                                            type="text" 
+                                            id="lastName" 
+                                            name="lastName" 
+                                            placeholder="Enter your last name"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="error-message" id="lastName-error"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <div class="input-container">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        placeholder="Enter your email address"
+                                        required
+                                    >
+                                    <div class="validation-icon" id="email-validation"></div>
+                                </div>
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <div class="input-container">
+                                    <i class="fas fa-phone input-icon"></i>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        name="phone" 
+                                        placeholder="Enter your phone number (optional)"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Account Details -->
+                        <div class="form-step" id="step-2">
+                            <div class="form-group">
+                                <label for="password">Password <span class="required">*</span></label>
+                                <div class="input-container">
+                                    <i class="fas fa-lock input-icon"></i>
+                                    <input 
+                                        type="password" 
+                                        id="password" 
+                                        name="password" 
+                                        placeholder="Create a strong password"
+                                        required
+                                    >
+                                    <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                                        <i class="fas fa-eye" id="password-icon"></i>
+                                    </button>
+                                </div>
+                                <div class="password-strength" id="password-strength">
+                                    <div class="strength-bar">
+                                        <div class="strength-fill" id="strength-fill"></div>
+                                    </div>
+                                    <span class="strength-text" id="strength-text">Password strength</span>
+                                </div>
+                                <div class="error-message" id="password-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                                <div class="input-container">
+                                    <i class="fas fa-lock input-icon"></i>
+                                    <input 
+                                        type="password" 
+                                        id="confirmPassword" 
+                                        name="confirmPassword" 
+                                        placeholder="Confirm your password"
+                                        required
+                                    >
+                                    <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                        <i class="fas fa-eye" id="confirmPassword-icon"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" id="confirmPassword-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dateOfBirth">Date of Birth</label>
+                                <div class="input-container">
+                                    <i class="fas fa-calendar input-icon"></i>
+                                    <input 
+                                        type="date" 
+                                        id="dateOfBirth" 
+                                        name="dateOfBirth"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Preferences -->
+                        <div class="form-step" id="step-3">
+                            <div class="form-group">
+                                <label for="interests">Learning Interests <span class="required">*</span></label>
+                                <div class="interests-grid">
+                                    <label class="interest-item">
+                                        <input type="checkbox" name="interests" value="programming">
+                                        <span class="interest-card">
+                                            <i class="fas fa-code"></i>
+                                            <span>Programming</span>
+                                        </span>
+                                    </label>
+                                    <label class="interest-item">
+                                        <input type="checkbox" name="interests" value="design">
+                                        <span class="interest-card">
+                                            <i class="fas fa-palette"></i>
+                                            <span>Design</span>
+                                        </span>
+                                    </label>
+                                    <label class="interest-item">
+                                        <input type="checkbox" name="interests" value="business">
+                                        <span class="interest-card">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Business</span>
+                                        </span>
+                                    </label>
+                                    <label class="interest-item">
+                                        <input type="checkbox" name="interests" value="marketing">
+                                        <span class="interest-card">
+                                            <i class="fas fa-bullhorn"></i>
+                                            <span>Marketing</span>
+                                        </span>
+                                    </label>
+                                    <label class="interest-item">
+                                        <input type="checkbox" name="interests" value="data-science">
+                                        <span class="interest-card">
+                                            <i class="fas fa-chart-bar"></i>
+                                            <span>Data Science</span>
+                                        </span>
+                                    </label>
+                                    <label class="interest-item">
+                                        <input type="checkbox" name="interests" value="photography">
+                                        <span class="interest-card">
+                                            <i class="fas fa-camera"></i>
+                                            <span>Photography</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="error-message" id="interests-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="experience">Experience Level</label>
+                                <div class="input-container">
+                                    <i class="fas fa-chart-line input-icon"></i>
+                                    <select id="experience" name="experience">
+                                        <option value="" disabled selected>Select your experience level</option>
+                                        <option value="beginner">Beginner</option>
+                                        <option value="intermediate">Intermediate</option>
+                                        <option value="advanced">Advanced</option>
+                                        <option value="expert">Expert</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for updates and special offers
+                                </label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>
+                                </label>
+                                <div class="error-message" id="terms-error"></div>
+                            </div>
+                        </div>
+
+                        <!-- Form Navigation -->
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-outline prev-btn" id="prevBtn">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="btn btn-primary next-btn" id="nextBtn">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                                <span class="btn-text">Create Account</span>
+                                <i class="fas fa-user-plus btn-icon"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="login.html" class="login-link">Sign in here</a></p>
+                    </div>
+                </div>
+
+                <!-- Right Side - Benefits -->
+                <div class="benefits-side">
+                    <div class="benefits-content">
+                        <h2>Why Join Learners.us?</h2>
+                        <p>Unlock your potential with our comprehensive learning platform</p>
+
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-infinity"></i>
+                                </div>
+                                <div class="benefit-text">
+                                    <h3>Lifetime Access</h3>
+                                    <p>Once enrolled, access your courses forever with all future updates included.</p>
+                                </div>
+                            </div>
+
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="benefit-text">
+                                    <h3>Expert Instructors</h3>
+                                    <p>Learn from industry professionals with years of real-world experience.</p>
+                                </div>
+                            </div>
+
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="benefit-text">
+                                    <h3>Certificates</h3>
+                                    <p>Earn verified certificates to showcase your skills to employers.</p>
+                                </div>
+                            </div>
+
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="benefit-text">
+                                    <h3>Learn Anywhere</h3>
+                                    <p>Access courses on any device, anytime, anywhere with our mobile app.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Learners.us transformed my career. The courses are practical, engaging, and taught by real experts."</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Sarah Johnson">
+                                <div>
+                                    <strong>Sarah Johnson</strong>
+                                    <span>Software Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="success-animation">
+                <div class="checkmark-circle">
+                    <div class="checkmark"></div>
+                </div>
+            </div>
+            <h3>Welcome to Learners.us!</h3>
+            <p>Your account has been created successfully. Please check your email to verify your account.</p>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="closeModal()">Close</button>
+                <button class="btn btn-primary" onclick="redirectToLogin()">Go to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Creating your account...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>

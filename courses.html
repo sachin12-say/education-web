@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses | Learners.us</title>
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="courses.css">
+  <style>
+    .top-banner {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1584697964154-96f18dec3b43') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .top-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .top-banner h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #00ffe5, #a88beb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.3s ease;
+    }
+
+    .top-banner h1:hover {
+      transform: scale(1.05);
+    }
+
+    .course-description {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.1rem;
+      color: #ccc;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Learners<span>.us</span></div>
+      <button class="hamburger" id="hamburger-btn">☰</button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#login" class="nav-btn">Login</a></li>
+        <li><a href="#signup" class="nav-btn nav-signup">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+
+
+ <section class="top-banner">
+  <div>
+    <h1>Explore Our Courses to Boost Your Career</h1>
+  </div>
+</section>
+<!-- -------------------------------------------------------------------------------- -->
+ 
+
+  <section class="second-banner">
+  <div>
+ <h2 class="accessible-heading">
+  Courses for Differently-Abled Learners
+</h2>
+<center>
+<p class="accessible-description">
+  Our inclusive learning modules are thoughtfully crafted for students with visual, hearing, or cognitive disabilities—ensuring every learner has an equal opportunity to succeed.
+</p>
+</center>
+  </div>
+
+  <!-- ---------------disable courses---------------------------------------- -->
+<section class="courses" id="courses">
+   <div class="course-grid"></div>
+<!-- Courses for Differently-Abled Students -->
+ <div class="accessible-slider">
+<div class="course-card">
+  <h3>Screen Reader Friendly HTML</h3>
+  <p>Build websites accessible to visually impaired users.</p>
+  <p><strong>Start:</strong> August 10 | <strong>Price:</strong> ₹999</p>
+  <button class="enroll">Enroll</button>
+</div>
+<div class="course-card">
+  <h3>Sign Language for Beginners</h3>
+  <p>Basic sign language for inclusive communication.</p>
+  <p><strong>Start:</strong> August 15 | <strong>Price:</strong> ₹899</p>
+  <button class="enroll">Enroll</button>
+</div>
+<div class="course-card">
+  <h3>Inclusive Design Principles</h3>
+  <p>Design products that cater to all users.</p>
+  <p><strong>Start:</strong> August 18 | <strong>Price:</strong> ₹1399</p>
+  <button class="enroll">Enroll</button>
+</div>
+<div class="course-card">
+  <h3>Assistive Tech Tools</h3>
+  <p>Learn tools that help learners with disabilities thrive.</p>
+  <p><strong>Start:</strong> August 22 | <strong>Price:</strong> ₹1199</p>
+  <button class="enroll">Enroll</button>
+</div>
+<div class="course-card">
+  <h3>Easy Coding with Voice</h3>
+  <p>Hands-free coding using voice commands and tools.</p>
+  <p><strong>Start:</strong> August 25 | <strong>Price:</strong> ₹1599</p>
+  <button class="enroll">Enroll</button>
+</div>
+<div class="course-card">
+  <h3>Learning with Dyslexia</h3>
+  <p>Techniques and tools for dyslexic learners.</p>
+  <p><strong>Start:</strong> August 28 | <strong>Price:</strong> ₹1099</p>
+  <button class="enroll">Enroll</button>
+   </section></div>
+</div>
+</section>
+
+
+
+  <p class="course-description">
+    Dive into our wide range of expertly designed courses tailored to help you grow your skills in web development, design, marketing, and more.
+  </p>
+
+  <!-- Courses Section -->
+  <section class="courses" id="courses">
+    <h2 style="font-size: 2.4rem; color: #00ffe5;">Our Popular Courses</h2>
+
+    <div class="course-grid">
+  
+<!-- ------------------------------- -->
+
+      <div class="course-card">
+        <h3>HTML & CSS Basics</h3>
+        <p>Learn how to build beautiful websites from scratch.</p>
+        <p><strong>Start:</strong> June 15 | <strong>Price:</strong> ₹1499</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>JavaScript Essentials</h3>
+        <p>Master interactivity with vanilla JavaScript.</p>
+        <p><strong>Start:</strong> June 20 | <strong>Price:</strong> ₹1799</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Tailwind CSS</h3>
+        <p>Build stylish layouts with utility-first design.</p>
+        <p><strong>Start:</strong> July 1 | <strong>Price:</strong> ₹1299</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>React.js Crash Course</h3>
+        <p>Build dynamic web apps with React.</p>
+        <p><strong>Start:</strong> July 10 | <strong>Price:</strong> ₹2499</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Python Programming</h3>
+        <p>Perfect for beginners to learn programming.</p>
+        <p><strong>Start:</strong> June 25 | <strong>Price:</strong> ₹1699</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Data Science Basics</h3>
+        <p>Get started with data analysis and visualization.</p>
+        <p><strong>Start:</strong> July 5 | <strong>Price:</strong> ₹2999</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>UI/UX Design</h3>
+        <p>Learn user-centric design thinking.</p>
+        <p><strong>Start:</strong> June 28 | <strong>Price:</strong> ₹1999</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Machine Learning Intro</h3>
+        <p>Get started with algorithms and AI basics.</p>
+        <p><strong>Start:</strong> July 12 | <strong>Price:</strong> ₹3499</p>
+        <button class="enroll">Enroll</button>
+      </div>
+
+      <!-- More Courses -->
+       
+      <div class="course-card">
+        <h3></h3>
+        <p>Improve your website’s ranking on Google.</p>
+        <p><strong>Start:</strong> July 15 | <strong>Price:</strong> ₹999</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Digital Marketing</h3>
+        <p>Master marketing strategies that convert.</p>
+        <p><strong>Start:</strong> July 20 | <strong>Price:</strong> ₹1899</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Bootstrap 5</h3>
+        <p>Responsive layouts using the Bootstrap framework.</p>
+        <p><strong>Start:</strong> July 22 | <strong>Price:</strong> ₹999</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Git & GitHub</h3>
+        <p>Learn version control the right way.</p>
+        <p><strong>Start:</strong> July 25 | <strong>Price:</strong> ₹799</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Figma for Designers</h3>
+        <p>Create beautiful UI mockups and prototypes.</p>
+        <p><strong>Start:</strong> August 1 | <strong>Price:</strong> ₹1499</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>Full Stack Web Dev</h3>
+        <p>Frontend + Backend in one complete bundle.</p>
+        <p><strong>Start:</strong> August 5 | <strong>Price:</strong> ₹4999</p>
+        <button class="enroll">Enroll</button>
+      </div>
+      <div class="course-card">
+        <h3>WordPress Mastery</h3>
+        <p>Build and manage websites with WordPress.</p>
+        <p><strong>Start:</strong> July 30 | <strong>Price:</strong> ₹1299</p>
+        <button class="enroll">Enroll</button>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-logo">Learners<span class="logo-accent">.us</span></h3>
+                    <p>Empowering learners with quality education anytime, anywhere.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@learners.us</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Address: Delhi, India</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Subscribe</h4>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Learners.us. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign Language Popup -->
+    <div id="sign-language-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <h3>Sign Language Help</h3>
+            <video controls width="320">
+                <source src="https://youtu.be/obpSXJVqBPM" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="btn btn-outline" onclick="closeSignLanguageHelp()">Close</button>
+        </div>
+    </div>
+
+    <script src="courses.js"></script>
+</body>
+</html>

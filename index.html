@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learners.us - Skills that start careers</title>
+    <meta name="description" content="Empowering learners with quality education through expert-led courses, hands-on projects, and inclusive learning experiences.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="accessbility.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    Learners<span class="logo-accent">.us</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="courses.html" class="nav-link">Courses</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <!-- Accessibility Controls -->
+                    <div class="accessibility-controls">
+                        <button class="font-btn" onclick="adjustFontSize(1)">A+</button>
+                        <button class="font-btn" onclick="adjustFontSize(-1)">A-</button>
+                        <select class="language-select" onchange="changeLanguage(this.value)">
+                            <option value="en">English</option>
+                            <option value="hi">हिंदी</option>
+                        </select>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+
+                    <!-- Auth Buttons -->
+                    <div class="auth-buttons">
+                      <a href="login page.html">  <button class="btn btn-outline">Login</button></a>
+                      <a href="signup.html">  <button class="btn btn-primary">Sign Up</button></a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-controls">
+                    <button class="theme-toggle mobile-theme" onclick="toggleTheme()">
+                        <i class="fas fa-moon" id="mobile-theme-icon"></i>
+                    </button>
+                    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars" id="hamburger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Hero Text -->
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Skills that start <span class="text-accent">careers</span>
+                    </h1>
+                    <p class="hero-description">
+                        Introducing Career Accelerators – focus on the skills and real-world experience that'll get you noticed.
+                    </p>
+
+                    <!-- Accessibility Features -->
+                    <div class="accessibility-features">
+                        <button class="btn btn-outline" onclick="readAloud()">
+                            <i class="fas fa-volume-up"></i> Read Aloud
+                        </button>
+                        <button class="btn btn-outline" onclick="showSignLanguageHelp()">
+                            <i class="fas fa-hands"></i> Sign Language Help
+                        </button>
+                    </div>
+
+                    <button class="btn btn-primary btn-large">
+                        Explore All Career Accelerators →
+                    </button>
+                </div>
+
+                <!-- Hero Slider -->
+                <div class="hero-slider">
+                    <div class="slider-container">
+                        <img src="https://s.udemycdn.com/career-academies/careers/digital-marketer/digital-marketer-human.png" 
+                             class="slide active" alt="Digital Marketer">
+                        <img src="https://s.udemycdn.com/career-academies/careers/full-stack-web-developer/frontend-webdev-human.png" 
+                             class="slide" alt="Web Developer">
+                        <img src="https://s.udemycdn.com/career-academies/careers/data-scientist/data-scientist-person.png" 
+                             class="slide" alt="Data Scientist">
+                    </div>
+                    <div class="slider-indicators">
+                        <button class="indicator active" onclick="goToSlide(0)"></button>
+                        <button class="indicator" onclick="goToSlide(1)"></button>
+                        <button class="indicator" onclick="goToSlide(2)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Image Section -->
+        <div class="container">
+            <div class="featured-image">
+                <img src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/b70d2872-502e-496b-aa92-4acdf46a50f2.png" 
+                     alt="Career Accelerator">
+                <div class="image-overlay">
+                    <h2>Unlock Your Future with In-Demand Skills</h2>
+                    <p>Boost your career with courses designed by industry experts. Gain practical experience, certifications, and the confidence to succeed in the digital world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Middle CTA Section -->
+    <section class="middle-cta">
+        <div class="container">
+            <h2 class="section-title">
+                Transform Your <span class="text-accent">Future</span>
+            </h2>
+            <p class="section-description">
+                Master new skills with expert-led courses, hands-on projects, and a supportive community. Start your learning journey today.
+            </p>
+
+            <div class="cta-buttons">
+                <button class="btn btn-primary btn-large">Start Learning →</button>
+                <a href="watchdemo.html" target="_blank" rel="noopener noreferrer"><button class="btn btn-outline btn-large">▶ Watch Demo</button></a>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>4.9/5</h3>
+                    <p>Student Rating</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users stat-icon"></i>
+                    <h3>50K+</h3>
+                    <p>Active Students</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-book-open stat-icon"></i>
+                    <h3>200+</h3>
+                    <p>Expert Courses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">
+                        About <span class="text-accent">Learners.us</span>
+                    </h2>
+                    <p>
+                        At Learners.us, we're on a mission to revolutionize online education. We empower learners around the world through cutting-edge courses, real-world mentorship, and an inclusive learning experience. Our vision is to make top-tier education accessible to everyone — whether you're a beginner, a professional, or just curious.
+                    </p>
+                    <p>
+                        With over 200+ curated courses and expert instructors, we help students upgrade their skills in technology, business, design, and more. We believe in interactive learning, community support, and lifelong growth.
+                    </p>
+                    <a href="courses.html"><button class="btn btn-primary btn-large">Explore Courses</button></a>
+                </div>
+                <div class="about-image">
+                    <img src="https://www.shutterstock.com/image-photo/hands-typing-on-laptop-programming-600nw-2480023489.jpg" 
+                         alt="Education background">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <div class="container">
+            <h2 class="section-title">Our Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-track"></div>
+                    <h3>Basic Computer Skills</h3>
+                    <p class="course-info">Start: July 10 | Duration: 8 Weeks</p>
+                    <p class="course-price">₹ 6,399</p>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-track"></div>
+                    <h3>Accessible Web Navigation</h3>
+                    <p class="course-info">Start: Aug 1 | Duration: 6 Weeks</p>
+                    <p class="course-price">₹ 5,999</p>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-track"></div>
+                    <h3>Visual Storytelling with Canva</h3>
+                    <p class="course-info">Start: Aug 6 | Duration: 12 Weeks</p>
+                    <p class="course-price">₹ 8,999</p>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-track"></div>
+                    <h3>Intro to Coding with Scratch</h3>
+                    <p class="course-info">Start: Aug 1 | Duration: 6 Weeks</p>
+                    <p class="course-price">₹ 6,999</p>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-track"></div>
+                    <h3>Adobe Premiere Pro</h3>
+                    <p class="course-info">Start: Aug 1 | Duration: 6 Weeks</p>
+                    <p class="course-price">₹ 7,999</p>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-track"></div>
+                    <h3>Digital Drawing & Art</h3>
+                    <p class="course-info">Start: Aug 1 | Duration: 6 Weeks</p>
+                    <p class="course-price">₹ 7,999</p>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-track"></div>
+                    <h3>Life Skills & Online Safety</h3>
+                    <p class="course-info">Start: Aug 1 | Duration: 6 Weeks</p>
+                    <p class="course-price">₹ 7,999</p>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-track"></div>
+                    <h3>Music Creation for All</h3>
+                    <p class="course-info">Start: Aug 1 | Duration: 6 Weeks</p>
+                    <p class="course-price">₹ 7,999</p>
+                    <button class="btn btn-primary">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-logo">Learners<span class="logo-accent">.us</span></h3>
+                    <p>Empowering learners with quality education anytime, anywhere.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@learners.us</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Address: Delhi, India</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Subscribe</h4>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Learners.us. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign Language Popup -->
+    <div id="sign-language-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <h3>Sign Language Help</h3>
+            <video controls width="320">
+                <source src="https://youtu.be/obpSXJVqBPM" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="btn btn-outline" onclick="closeSignLanguageHelp()">Close</button>
+        </div>
+    </div>
+
+    <!-- Quiz Popup -->
+    <div id="quiz-popup" class="quiz-popup">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2>Test Your Knowledge!</h2>
+                <p>Quick quiz about online learning - Let's see how much you know!</p>
+                <button class="quiz-close" onclick="closeQuiz()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="quiz-progress"></div>
+                </div>
+                <span class="question-counter">
+                    Question <span id="current-question">1</span> of <span id="total-questions">6</span>
+                </span>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-container" id="question-container">
+                    <h3 class="question-text" id="question-text"></h3>
+                    <div class="answers-container" id="answers-container">
+                        <!-- Answers will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <div class="quiz-feedback" id="quiz-feedback">
+                    <div class="feedback-content">
+                        <div class="feedback-icon" id="feedback-icon"></div>
+                        <div class="feedback-text" id="feedback-text"></div>
+                        <div class="feedback-explanation" id="feedback-explanation"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button class="btn btn-outline quiz-prev" onclick="previousQuestion()" style="display: none;">
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button class="btn btn-primary quiz-next" onclick="nextQuestion()" style="display: none;">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-primary quiz-finish" onclick="finishQuiz()" style="display: none;">
+                    Finish Quiz <i class="fas fa-flag-checkered"></i>
+                </button>
+            </div>
+
+            <div class="quiz-results" id="quiz-results" style="display: none;">
+                <div class="results-content">
+                    <div class="results-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="results-title">Quiz Complete!</h3>
+                    <div class="score-display">
+                        <span class="score-text">Your Score:</span>
+                        <span class="score-number" id="final-score">0/6</span>
+                        <span class="score-percentage" id="score-percentage">0%</span>
+                    </div>
+                    <div class="performance-message" id="performance-message"></div>
+                    <div class="results-actions">
+                        <button class="btn btn-outline" onclick="retakeQuiz()">
+                            <i class="fas fa-redo"></i> Retake Quiz
+                        </button>
+                        <button class="btn btn-primary" onclick="closeQuiz()">
+                            <i class="fas fa-graduation-cap"></i> Explore Courses
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="quiz.js"></script>
+    <script src="accessibility.js"></script>
+</body>
+</html>
